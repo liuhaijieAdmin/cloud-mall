@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-base" />
+        <module name="mall-eureka" />
+        <module name="mall-fegin" />
+        <module name="mall-hystrix-dashboard" />
+        <module name="mall-server-inventory" />
+        <module name="mall-server-order" />
+        <module name="zhuzi-distributed-tx" />
+        <module name="zhuzi-tx-manager" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-mall" target="1.8" />
+      <module name="mall-base" target="1.8" />
+      <module name="mall-eureka" target="1.8" />
+      <module name="mall-fegin" target="1.8" />
+      <module name="mall-hystrix-dashboard" target="1.8" />
+      <module name="mall-server-inventory" target="1.8" />
+      <module name="mall-server-order" target="1.8" />
+      <module name="zhuzi-distributed-tx" target="1.8" />
+      <module name="zhuzi-tx-manager" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall.iml" filepath="$PROJECT_DIR$/cloud-mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-base/mall-base.iml" filepath="$PROJECT_DIR$/mall-base/mall-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-eureka/mall-eureka.iml" filepath="$PROJECT_DIR$/mall-eureka/mall-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-fegin/mall-fegin.iml" filepath="$PROJECT_DIR$/mall-fegin/mall-fegin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-hystrix-dashboard/mall-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/mall-hystrix-dashboard/mall-hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-server-inventory/mall-server-inventory.iml" filepath="$PROJECT_DIR$/mall-server-inventory/mall-server-inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-server-order/mall-server-order.iml" filepath="$PROJECT_DIR$/mall-server-order/mall-server-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhuzi-distributed-tx/zhuzi-distributed-tx.iml" filepath="$PROJECT_DIR$/zhuzi-distributed-tx/zhuzi-distributed-tx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhuzi-tx-manager/zhuzi-tx-manager.iml" filepath="$PROJECT_DIR$/zhuzi-tx-manager/zhuzi-tx-manager.iml" />
+    </modules>
+  </component>
+</project>

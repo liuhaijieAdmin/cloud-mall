@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhuzi.mallserverorder.mapper.OrderMapper" >
+    <resultMap id="BaseResultMap" type="com.zhuzi.mallbase.model.entity.Order" >
+        <constructor >
+            <idArg column="order_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="order_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="order_price" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="inventory_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List" >
+    order_id, order_name, order_price, inventory_id
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from `order`
+        where order_id = #{orderId,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from `order`
+    where order_id = #{orderId,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.zhuzi.mallbase.model.entity.Order" >
+    insert into `order` (order_id, order_name, order_price,
+      inventory_id)
+    values (#{orderId,jdbcType=VARCHAR}, #{orderName,jdbcType=VARCHAR}, #{orderPrice,jdbcType=VARCHAR},
+      #{inventoryId,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.zhuzi.mallbase.model.entity.Order" >
+        insert into `order`
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="orderId != null" >
+                order_id,
+            </if>
+            <if test="orderName != null" >
+                order_name,
+            </if>
+            <if test="orderPrice != null" >
+                order_price,
+            </if>
+            <if test="inventoryId != null" >
+                inventory_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="orderId != null" >
+                #{orderId,jdbcType=VARCHAR},
+            </if>
+            <if test="orderName != null" >
+                #{orderName,jdbcType=VARCHAR},
+            </if>
+            <if test="orderPrice != null" >
+                #{orderPrice,jdbcType=VARCHAR},
+            </if>
+            <if test="inventoryId != null" >
+                #{inventoryId,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhuzi.mallbase.model.entity.Order" >
+        update `order`
+        <set >
+            <if test="orderName != null" >
+                order_name = #{orderName,jdbcType=VARCHAR},
+            </if>
+            <if test="orderPrice != null" >
+                order_price = #{orderPrice,jdbcType=VARCHAR},
+            </if>
+            <if test="inventoryId != null" >
+                inventory_id = #{inventoryId,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where order_id = #{orderId,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zhuzi.mallbase.model.entity.Order" >
+    update `order`
+    set order_name = #{orderName,jdbcType=VARCHAR},
+      order_price = #{orderPrice,jdbcType=VARCHAR},
+      inventory_id = #{inventoryId,jdbcType=VARCHAR}
+    where order_id = #{orderId,jdbcType=VARCHAR}
+  </update>
+</mapper>

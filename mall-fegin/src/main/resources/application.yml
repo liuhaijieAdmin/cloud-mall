@@ -1,0 +1,12 @@
+server:
+  port: 83
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: localhost:7001/
+
+#开启对hystrix服务降级支持
+feign:
+  hystrix:
+    enabled: true

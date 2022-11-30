@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhuzi.mallserverinventory.mapper.InventoryMapper" >
+    <resultMap id="BaseResultMap" type="com.zhuzi.mallbase.model.entity.Inventory" >
+        <constructor >
+            <idArg column="inventory_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="shop_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="shop_count" jdbcType="INTEGER" javaType="java.lang.Integer" />
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List" >
+    inventory_id, shop_name, shop_count
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from `inventory`
+        where inventory_id = #{inventoryId,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from `inventory`
+    where inventory_id = #{inventoryId,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.zhuzi.mallserverinventory.mapper.InventoryMapper" >
+    insert into `inventory` (inventory_id, shop_name, shop_count
+      )
+    values (#{inventoryId,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, #{shopCount,jdbcType=INTEGER}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.zhuzi.mallserverinventory.mapper.InventoryMapper" >
+        insert into `inventory`
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="inventoryId != null" >
+                inventory_id,
+            </if>
+            <if test="shopName != null" >
+                shop_name,
+            </if>
+            <if test="shopCount != null" >
+                shop_count,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="inventoryId != null" >
+                #{inventoryId,jdbcType=VARCHAR},
+            </if>
+            <if test="shopName != null" >
+                #{shopName,jdbcType=VARCHAR},
+            </if>
+            <if test="shopCount != null" >
+                #{shopCount,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhuzi.mallserverinventory.mapper.InventoryMapper" >
+        update `inventory`
+        <set >
+            <if test="shopName != null" >
+                shop_name = #{shopName,jdbcType=VARCHAR},
+            </if>
+            <if test="shopCount != null" >
+                shop_count = #{shopCount,jdbcType=INTEGER},
+            </if>
+        </set>
+        where inventory_id = #{inventoryId,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zhuzi.mallserverinventory.mapper.InventoryMapper" >
+    update `inventory`
+    set shop_name = #{shopName,jdbcType=VARCHAR},
+      shop_count = #{shopCount,jdbcType=INTEGER}
+    where inventory_id = #{inventoryId,jdbcType=VARCHAR}
+  </update>
+</mapper>
